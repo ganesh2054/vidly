@@ -1,0 +1,2 @@
+## typo in static class property decleration
+https://github.com/facebook/prop-types/issues/264
