@@ -40,7 +40,7 @@ handleIncrement=(counter)=>{
       <React.Fragment>
     
 <main className="container">
-  {/* <Movie/> */}
+
   <Navbar totalCounters={this.state.counters.filter(c=>c.value>0).length}/>
   <Counters 
   onDelete={this.handleDelete}
@@ -48,6 +48,7 @@ handleIncrement=(counter)=>{
   onReset={this.handleReset}
   counters={this.state.counters}
   />
+    <Movie/>
 </main>
 
 </React.Fragment>
