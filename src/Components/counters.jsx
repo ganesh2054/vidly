@@ -21,12 +21,20 @@ class Counters extends React.Component {
     const counters=this.state.counters.filter(c=>c.id!==Id);
      this.setState({counters:counters})
     };
+    handleIncrement=(counter)=>{
+        const counters=[...this.state.counters];
+        const index=counters.indexOf(counter)
+        counters[index]={...counter};
+        counters[index].value++;
+        this.setState({counters});
+
+    };
 
     render() { 
         return <div>
                 <button onClick={this.handleReset} >Reset</button>
             {/* {this.state.counters.map(counter=><Counter key={counter.id} onDelete={this.handleDelete} id={counter.id} value={counter.value}/>)} */}
-            {this.state.counters.map(counter=><Counter key={counter.id} onDelete={this.handleDelete} counter={counter}/>)}
+            {this.state.counters.map(counter=><Counter key={counter.id} onDelete={this.handleDelete} counter={counter} onIncrement={this.handleIncrement}/>)}
         </div>;
     }
 }
