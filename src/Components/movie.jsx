@@ -5,10 +5,14 @@ import Pagination from './pagination';
 import {paginate} from '../utils/paginate';
 import ListGroup  from './listGroup';
 import MovieTable from './movieTable';
+import TableHeader from './tableHeader';
 import _ from 'lodash';
 
 
 class Movie  extends React.Component {
+ 
+
+
     state={
         movies:[],
         genres:[],
@@ -28,14 +32,7 @@ class Movie  extends React.Component {
     handleGenreSelect=genre=>{
         this.setState({selectedGenre:genre,currentPage:1})
     };
-    handleSort=path=>{
-        const sortColumn={...this.state.sortColumn};
-        if(sortColumn.path==path)
-        sortColumn.order=(sortColumn.order==='asc')?'desc':'asc';
-        else{
-            sortColumn.path=path;
-            sortColumn.order='asc';
-        }
+    handleSort=sortColumn=>{
         this.setState({sortColumn});
     }
 
@@ -64,7 +61,8 @@ class Movie  extends React.Component {
             <div className="col">
             <p>ther are {filtered.length} movie in database</p>
             <MovieTable movies={movie} onDelete={this.deleteMovie}
-            onSort={this.handleSort}/>
+            onSort={this.handleSort}
+            sortColumn={sortColumn}/>
 
             <Pagination itemCount={filtered.length} pageSize={this.state.pageSize} 
             onPageChange={this.handlePageChange} currentPage={this.state.currentPage} />
