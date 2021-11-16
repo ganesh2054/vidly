@@ -1,0 +1,12 @@
+.container1{
+   background-color: aqua;
+   border: 2px solid black;
+   display: flex;
+}
+.item{
+  
+    background-color: red;
+    border: 2px solid green;
+    margin: 2px;
+    
+}
