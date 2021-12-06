@@ -6,7 +6,7 @@ import  Ganesh1 from './ttest2';
 class Count extends React.Component {
    
          state={
-            count:0
+            count:10
         };
 
  

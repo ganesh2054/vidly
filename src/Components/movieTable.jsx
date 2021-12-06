@@ -33,7 +33,7 @@ class MoviesTable extends React.Component {
                           <td>{movie.genre.name}</td>
                           <td>{movie.numberInStock}</td>
                           <td>{movie.dailyRentalRate}</td>
-                          <td><button className='btn btn-primary' onClick={()=>onDelete(movie )}>Delete</button></td>
+                          <td><button className='btn btn-primary' onClick={()=>onDelete(movie )}>Remove</button></td>
     
                       </tr>
                    ))}
